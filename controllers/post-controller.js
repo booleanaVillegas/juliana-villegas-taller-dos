@@ -12,3 +12,19 @@ exports.ObtenerTodos = function(callback){
         }
     });
 }
+
+
+exports.nuevoPost = function(description,username,image,callback){
+
+    var values = [description,username,image];
+    db.getConexion().query('INSERT INTO posts (description,username,image) VALUES (?,?,?)',
+        values,
+        function(err, result){
+            if(err){
+                callback(err);
+            }else{
+                callback(false, result.insertId);
+            }
+        }
+    );
+}

@@ -62,4 +62,27 @@ var nuevosPost= [];
 });
 
 
+router.post('/new-post/', function(req, res, next) {
+    console.log("entre");
+
+
+    var name=req.body.comment;
+    var img= req.file.filename;
+
+
+    controller.nuevoPost(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
+        if(err){
+            res.status(500);
+            res.end();
+        }else{
+            console.log("registre");
+
+
+            res.redirect("/login");
+            //res.json(registraste);
+
+        }
+    });
+});
+
 module.exports = router;

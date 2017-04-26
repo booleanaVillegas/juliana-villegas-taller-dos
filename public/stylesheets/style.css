@@ -342,7 +342,7 @@ table {
 
 
 
-.signup>section>.content>form>input[type=text],[type=password],[type=email]  {
+.signup>section>.content>form>input[type=text],[type=password],[type=email],[type=text]  {
     width: 100%;
     padding: 0px 0px;
     margin: 15px 0;
@@ -356,6 +356,39 @@ table {
     font-weight: 300;
     font-size: 12pt;
 }
+
+[type=file]{
+    width: 100%;
+    padding: 0px 0px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12pt;  
+}
+
+[type=comment]{
+    width: 100%;
+     overflow: auto;
+     resize: none;
+    padding: 0px 0px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12pt;   
+}
+
 
 .signup>section>.content>form>::-webkit-input-placeholder {
     color: white;
