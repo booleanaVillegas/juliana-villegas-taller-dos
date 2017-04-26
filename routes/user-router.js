@@ -28,7 +28,7 @@ router.post('/posts/', function (req, res, next) {
     var pass= req.body.password;
 res.redirect("/users/"+user+"/"+pass);
 
-
+ 
 });
 
 //'/new/:name/:lastname/:email/:usuario/:pass/:nation/:img
@@ -106,7 +106,10 @@ router.get('/:usuario/:pass', function(req, res, next) {
                     }else {
                         console.log("usuario o contraseña incorrecto");
                         //res.send("nope")
-                        res.status(500);
+                        res.redirect("/");
+
+                        //res.status(500).send("Usuario o contraseña incorrecto");
+                        //res.json("Usuario o contraseña incorrecto");
                     }
 
         }
