@@ -35,26 +35,17 @@ var  usuario=getCookie("usuario");
         var galeria = $('.todos-post');
         $.each(respuesta, function(index,value){
 
-
-
      obtenerLikes(value.id_post).done(function(nlikes){
 var numlikes= nlikes.length;
 obtenerComments(value.id_post).done(function(ncomments){
  var   numcomments= ncomments.length;
 
-
-
-
-
-
-
-
             var article = $("<article>",{"class":"post col-6 offset-3 col-10-s offset-1-s"});
             var header = $("<div>",{"class":"header-post col-12 dev-center"});
-            var figure = $("<figure>",{"class":"col-1 col-3-s"});
-            var imgUser = $("<img>",{"src":"./img/profile.png","alt":"","class":"user-post-img col-12"});
+            var figure = $("<figure>",{"class":"col-1 col-2-s"});
+            var imgUser = $("<img>",{"src":"./img/profile.png","alt":"","class":"user-post-img col-12 col-10-s"});
             var content= $("<content>", {"class":"col-10  col-7-s"});
-            var nombreUser = $("<h2>"+value.username+"</h2>", {"class":"col-4 user-post-name"});
+            var nombreUser = $("<h2>"+value.username+"</h2>", {"class":"col-4 col-12-s user-post-name"});
             var description = $("<p>"+value.description+"</p>", {"class":"col-12 user-post-content"});
             var figureDos= $("<figure>",{"class":"col-12 post-img"});
             var imagePost= $("<img>",{"src":"../uploads/"+value.image,"alt":"","class":"col-12"});
@@ -95,13 +86,15 @@ obtenerComments(value.id_post).done(function(ncomments){
         $(".contenido-toggle-"+index).slideToggle("fast");
     });
 
-    $(".click-likes-"+index).click(function(){
-            agregarLike(usuario, value.id_post);
+    $(".click-likes-"+value.id_post).click(function(){
+        //console.log(value.id_post);
+        agregarLike(usuario, value.id_post);
     });
 
 });
 });
        });
+
     });
 
 
