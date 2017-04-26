@@ -9,27 +9,35 @@
 <body>
 
 
+
+
 <section class="signup  col-12 dev-center ">
     <section class="col-5 col-12-s dev-center ">
         <div class="content col-12">
             <figure><img class="col-6 col-8-s" src="img/sub_logo.png" alt=""></figure>
-            <form class="col-8 offset-2 col-10-s offset-1-s" method="post" action="/users/new-user/" >
 
-                <input type="text"  name="usuario" placeholder="Username">
 
-                <input type="email"  name="mail" placeholder="E-mail">
 
-                <input type="text"  name="name" placeholder="First name">
+
+            <form class="col-8 offset-2 col-10-s offset-1-s" method="post" id="upload-form" action="/users/new-user/" enctype="multipart/form-data">
+
+                <input type="file" id="photo" name="photo"
+                       placeholder="Selecciona un archivo ">
+
+                <input type="text" name="usuario" placeholder="Username">
+
+                <input type="email" name="mail" placeholder="E-mail">
+
+                <input type="text" name="name" placeholder="First name">
 
                 <input type="text" name="lastname" placeholder="Last Name">
 
 
-                <input type="text"  name="nation" placeholder="Country">
+                <input type="text" name="nation" placeholder="Country">
 
-                <input type="password"  name="pass" placeholder="Password">
+                <input type="password" name="pass" placeholder="Password">
 
-                    <button class="btn">Create Account</button>
-
+                <button class="btn">Create Account</button>
 
 
             </form>

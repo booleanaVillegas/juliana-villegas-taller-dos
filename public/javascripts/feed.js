@@ -25,6 +25,7 @@ $(document).ready(function(){
         usuario =respuesta[0].username;
         console.log(usuario);
 
+$(".user-img").attr("src", "../uploads/"+respuesta[0].profile_picture);
         $(".user-name").text(usuario);
     });
 

@@ -43,10 +43,17 @@ router.post('/new-user/', function(req, res, next) {
      var usuario=req.body.usuario;
      var pass=req.body.pass;
      var nation=req.body.nation;
-     var img= null;
+     var img= req.file.filename;
 
 
-       controller.nuevoUsuario(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
+   /* console.log(req.file.originalname);
+    console.log(req.file.filename);
+    console.log(req.file.path);
+    console.log(req.file.mimetype);
+    console.log(req.file.size);
+*/
+
+    controller.nuevoUsuario(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
      if(err){
      res.status(500);
      res.end();
@@ -125,6 +132,24 @@ controller.consultarUsuario(req.params.usuario,function(err,users){
     }
     //res.sendFile('C:/Users/Juliana/WebstormProjects/juliana-villegas-taller-dos/public/signup.html');
 });
+
+
+
+
+/*
+
+router.post('/photos',function(req, res, next) {
+    console.log(req.file.originalname);
+    console.log(req.file.filename);
+    console.log(req.file.path);
+    console.log(req.file.mimetype);
+    console.log(req.file.size);
+
+    // Guardar el archivo en la ubicacion final
+    //var targetPath = './public/images/' + req.file.filename;
+
+});
+*/
 
 
 

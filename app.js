@@ -31,8 +31,7 @@ app.use(bodyParser.urlencoded({extended:true, limit:'60mb'}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(multer({dest:'./public/uploads/'}).single('archivo'));
-
+app.use(multer({dest : './public/uploads/'}).single('photo'));
 app.use('/', index);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
