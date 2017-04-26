@@ -9,7 +9,7 @@ router.get('/:idpost', function(req, res, next) {
             res.end();
         }else{
             console.log("comments que llegaron");
-            console.log(comments);
+            //console.log(comments);
             res.json(comments);
 
         }

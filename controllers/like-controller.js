@@ -12,3 +12,19 @@ exports.ObtenerPorPost = function(idpost,callback){
         }
     });
 }
+
+exports.nuevoLike = function(idpost,username,callback){
+
+    var values = [username,idpost];
+    db.getConexion().query('INSERT INTO likes (username,id_post) VALUES (?,?)',
+        values,
+        function(err, result){
+            if(err){
+                callback(err);
+            }else{
+                callback(false, result.insertId);
+            }
+        }
+    );
+
+}

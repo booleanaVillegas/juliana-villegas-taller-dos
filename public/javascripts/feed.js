@@ -34,6 +34,9 @@ var  usuario=getCookie("usuario");
     obtenerPosts().done(function(respuesta){
         var galeria = $('.todos-post');
         $.each(respuesta, function(index,value){
+
+
+
      obtenerLikes(value.id_post).done(function(nlikes){
 var numlikes= nlikes.length;
 obtenerComments(value.id_post).done(function(ncomments){
@@ -58,7 +61,7 @@ obtenerComments(value.id_post).done(function(ncomments){
             var comLik= $("<div>",{"class":"com-lik"});
             var comments = $("<h2>"+"Comments"+"</h2>").attr("class","col-6 toggle-"+index);
             var spanComments= $("<span>"+"("+numcomments+")"+"</span>").attr("class","n-coments");
-            var likes = $("<h2>"+"Likes"+"</h2>").attr("class","col-6");
+            var likes = $("<h2>"+"Likes"+"</h2>").attr("class","col-6 click-likes-"+value.id_post+"");
             var spanLikes= $("<span>"+"("+numlikes+")"+"</span>").attr("class","n-likes");
             var toggleBox= $("<div>",{"class":"contenido-toggle contenido-toggle-"+index});
 
@@ -91,6 +94,11 @@ obtenerComments(value.id_post).done(function(ncomments){
     $(".toggle-"+index).click(function(){
         $(".contenido-toggle-"+index).slideToggle("fast");
     });
+
+    $(".click-likes-"+index).click(function(){
+            agregarLike(usuario, value.id_post);
+    });
+
 });
 });
        });
@@ -140,7 +148,12 @@ function obtenerUsuario(username){
         type:"get",
         dataType: "json"
     });
+}
 
-
-
+function agregarLike(username,post){
+    return $.ajax({
+        url:"http://localhost:3000/likes/nuevo/"+username+"/"+post+"",
+        type:"post",
+        dataType: "json"
+    });
 }
