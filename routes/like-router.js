@@ -8,7 +8,7 @@ router.get('/:idpost', function(req, res, next) {
             res.status(500);
             res.end();
         } else {
-            console.log("likes que llegaron");
+          //  console.log("likes que llegaron");
            // console.log(likes);
             res.json(likes);
 
