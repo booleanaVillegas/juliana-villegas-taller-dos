@@ -16,11 +16,11 @@ router.get('/:idpost', function(req, res, next) {
     });
 });
 
-router.post('/nuevo', function (req, res, next) {
+router.post('/nuevo/:idPost', function (req, res, next) {
 
    var content= req.body.comment;
    var usuario= req.cookies['usuario'];
-   var post=req.body.idPost;
+   var post=req.params.idPost;
 
     controller.nuevoComment(content ,post, usuario, function (err, likes) {
         if (err) {

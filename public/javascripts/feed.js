@@ -65,7 +65,7 @@ $(document).ready(function () {
                        var form = document.createElement("form");
                     form.setAttribute('class','col-12 col-10-s');
                      form.setAttribute('method',"post");
-                  form.setAttribute('action',"/comments/nuevo/"+1);
+                  form.setAttribute('action',"/comments/nuevo/"+value.id_post);
                    //form.attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
 
                         var i = document.createElement("input"); //input element, text
