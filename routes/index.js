@@ -26,5 +26,11 @@ router.get('/feed', function(req, res, next) {
     //res.sendFile('C:/Users/Juliana/WebstormProjects/juliana-villegas-taller-dos/public/signup.html');
 });
 
+router.get('/logout', function(req, res, next) {
+
+  res.clearCookie("usuario");
+    //cookies.set('usuario', {expires: Date.now()});
+    res.redirect("/");
+});
 
 module.exports = router;
