@@ -65,20 +65,20 @@ var nuevosPost= [];
 router.post('/new-post/', function(req, res, next) {
     console.log("entre");
 
-
-    var name=req.body.comment;
+var user=req.cookies['usuario'];
+    var comment=req.body.comment;
     var img= req.file.filename;
 
 
-    controller.nuevoPost(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
+    controller.nuevoPost(img,user,comment,function(err,registraste){
         if(err){
             res.status(500);
             res.end();
         }else{
-            console.log("registre");
+            console.log("registre nuevo post");
 
 
-            res.redirect("/login");
+            res.redirect("/feed");
             //res.json(registraste);
 
         }

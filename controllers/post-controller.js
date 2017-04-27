@@ -14,10 +14,10 @@ exports.ObtenerTodos = function(callback){
 }
 
 
-exports.nuevoPost = function(description,username,image,callback){
+exports.nuevoPost = function(image,username,description,callback){
 
-    var values = [description,username,image];
-    db.getConexion().query('INSERT INTO posts (description,username,image) VALUES (?,?,?)',
+    var values = [image,username,description];
+    db.getConexion().query('INSERT INTO posts (image,username,description) VALUES (?,?,?)',
         values,
         function(err, result){
             if(err){
