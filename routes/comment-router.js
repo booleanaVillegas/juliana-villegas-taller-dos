@@ -31,7 +31,7 @@ router.post('/nuevo/:idPost', function (req, res, next) {
 
             //console.log(likes);
             console.log("Hice un comment");
-
+res.redirect("/feed");
             //res.json(likes);
 
         }
