@@ -65,7 +65,7 @@ $(document).ready(function () {
                        var form = document.createElement("form");
                     form.setAttribute('class','col-12 col-10-s');
                      form.setAttribute('method',"post");
-                  form.setAttribute('action',"/comments");
+                  form.setAttribute('action',"/comments/nuevo/"+1);
                    //form.attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
 
                         var i = document.createElement("input"); //input element, text
@@ -74,7 +74,6 @@ $(document).ready(function () {
                         i.setAttribute('name',"comment");
                         i.setAttribute('placeholder',"What do you think?");
                         i.setAttribute('autocomplete',"off");
-
                         var s = document.createElement("button"); //input element, Submit button
                         s.setAttribute('class',"fa fa-paper-plane col-1");
                         s.setAttribute('aria-hidden',"true");
