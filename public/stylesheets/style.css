@@ -372,7 +372,7 @@ table {
     font-size: 12pt;  
 }
 
-[type=comment]{
+[type=summary]{
     width: 100%;
      overflow: auto;
      resize: none;
@@ -387,6 +387,12 @@ table {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 12pt;   
+    
+    outline-color: var(--brown-solid);
+    
+    
+    
+    
 }
 
 
@@ -550,7 +556,7 @@ table {
 }
 
 .post{
-    padding: 20px 50px 0px 50px;
+    padding: 20px 50px 20px 50px;
     background-color: var(--gray-solid);
     margin-top: 20px;
     margin-bottom: 20px;
@@ -627,9 +633,54 @@ width: 40px;
 
 }
 
+.box-comment {
+	text-align: center;
+    background-color: gray;
+border-radius: 30px;
+    
+}
+
+input[type=comment]{
+ 
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12pt;
+
+    outline-color: var(--brown-solid);
+    border-bottom: 2px solid var(--brown-solid);
+}
+
+input[type=comment]::-webkit-input-placeholder{
+    color: gainsboro;
+}
+
+
+
+.fa{
+cursor: pointer;
+       background-color: var(--brown-transparent);
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px 5px 8px;
+    border-radius: 14px;
+     border-style: none;
+
+}
+
 .post-img{
     margin-top: 10px;
 }
+.com-lik>h2>span {
+	cursor: pointer;
+}
+
 /*-------------------*/
 
 

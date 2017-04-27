@@ -6,6 +6,8 @@
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
         <link rel="stylesheet" href="stylesheets/style.css">
+        
+        <script src="https://use.fontawesome.com/33e6d88812.js"></script>
         <title>Your newsfeed</title>
     </head>
 </head>
@@ -49,7 +51,7 @@
                        placeholder="Selecciona un archivo">
               
 
-                <textarea type="comment"  name="comment"  placeholder="Qué piensas de tu tattoo :D "></textarea>
+                <textarea type="summary"  name="summary"  placeholder="Qué piensas de tu tattoo :D "></textarea>
 
                 <!--<input class="btn" type="submit" value="Log in">-->
 <button>share post</button>
@@ -83,7 +85,20 @@
               <div class="contenido-toggle contenido-toggle-0 dev-center-vertical">
                   <div class="img-post-user"></div>
                   <h1>name:</h1>
-                  <p>descripción</p>
+                  <p>descripción<br> </p><hr>
+              </div>
+              
+              <div class="box-comment col-12">
+                  
+                       <form name="soyForm"  class="col-12 col-10-s" method="post" action="/comments" >
+
+                <input class="col-10"  type="comment"  name="comment" placeholder="What do you think?">
+
+<button  class="fa fa-paper-plane col-1" aria-hidden="true"></button>
+
+
+            </form>
+                  
               </div>
               
         </article>

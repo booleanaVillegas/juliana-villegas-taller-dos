@@ -66,7 +66,7 @@ router.post('/new-post/', function(req, res, next) {
     console.log("entre");
 
 var user=req.cookies['usuario'];
-    var comment=req.body.comment;
+    var comment=req.body.summary;
     var img= req.file.filename;
 
 

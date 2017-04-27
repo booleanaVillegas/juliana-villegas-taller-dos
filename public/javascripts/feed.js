@@ -58,6 +58,30 @@ $(document).ready(function () {
                         var toggleBox = $("<div>", {"class": "dev-center-vertical contenido-toggle contenido-toggle-" + index});
 
 
+                        var boxComment = $("<div>", {"class": "box-comment col-12"});
+
+                      //  var form = $("<form>"+"</form>").attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
+
+                       var form = document.createElement("form");
+                    form.setAttribute('class','col-12 col-10-s');
+                     form.setAttribute('method',"post");
+                  form.setAttribute('action',"/comments");
+                   //form.attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
+
+                        var i = document.createElement("input"); //input element, text
+                        i.setAttribute('class',"col-10");
+                        i.setAttribute('type',"comment");
+                        i.setAttribute('name',"comment");
+                        i.setAttribute('placeholder',"What do you think?");
+
+                        var s = document.createElement("button"); //input element, Submit button
+                        s.setAttribute('class',"fa fa-paper-plane col-1");
+                        s.setAttribute('aria-hidden',"true");
+
+                        form.appendChild(i);
+                        form.appendChild(s);
+
+
                         galeria.append(article);
                         article.append(header);
                         header.append(figure);
@@ -73,14 +97,15 @@ $(document).ready(function () {
                         comments.append(spanComments);
                         likes.append(spanLikes);
                         article.append(toggleBox);
-
+article.append(boxComment);
+boxComment.append(form);
                         $.each(ncomments, function (index, value) {
                             obtenerUsuario(value.username).done(function (userComment) {
                                 var userComImg=$("<div>",{"class":"img-post-user"});
                                 toggleBox.append(userComImg);
                                 $(".img-post-user").css({
-                                    //"background-image": "url(../uploads/"+userComment[0].profile_picture+")",
-                                    "background-image": "url(../uploads/"+1+".jpg)"
+                                    "background-image": "url(../uploads/"+userComment[0].profile_picture+")",
+                                   // "background-image": "url(../uploads/"+1+".jpg)"
 
                                 });
                                 var nameUserPost = $("<h1>" + value.username + ": " + "</h1>");
