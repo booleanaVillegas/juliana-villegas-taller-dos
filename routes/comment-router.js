@@ -22,7 +22,7 @@ router.post('/nuevo', function (req, res, next) {
    var usuario= req.cookies['usuario'];
    var post=req.body.idPost;
 
-    controller.nuevoComment(req.params.contenido ,req.params.idpost, req.params.username , function (err, likes) {
+    controller.nuevoComment(content ,post, usuario, function (err, likes) {
         if (err) {
             res.status(500);
             res.end();
