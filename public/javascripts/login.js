@@ -3,7 +3,7 @@
  */
 function validarUsuario(username,contaseña){
     return $.ajax({
-        url:"http://localhost:3000/users/"+username+"/"+contaseña+"",
+        url:"/users/"+username+"/"+contaseña+"",
         type:"get",
         dataType: "json"
     });

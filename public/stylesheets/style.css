@@ -623,7 +623,7 @@ p{
 }
 
 .img-post-user {
-	background-image: url(../img/profile.png);
+
     float: left;
 width: 40px;
     height: 40px;
@@ -671,6 +671,10 @@ cursor: pointer;
     padding: 5px 10px 5px 8px;
     border-radius: 14px;
      border-style: none;
+
+}
+
+input[type=file]{
 
 }
 

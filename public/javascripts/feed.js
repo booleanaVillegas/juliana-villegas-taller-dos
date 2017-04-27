@@ -99,19 +99,29 @@ $(document).ready(function () {
                         article.append(toggleBox);
                         article.append(boxComment);
                         boxComment.append(form);
-                        $.each(ncomments, function (index, value) {
-                            obtenerUsuario(value.username).done(function (userComment) {
-                                var userComImg=$("<div>",{"class":"img-post-user"});
+                        $.each(ncomments, function (index, valor) {
+                            obtenerUsuario(valor.username).done(function (userComment) {
+                                var userComImg=$("<div>",{"class":"img-post-user img-post-user"+value.id_post+index});
+
                                 toggleBox.append(userComImg);
-                                $(".img-post-user").css({
+                                console.log(userComment[0].username);
+                               /* $(".img-post-user").css({
                                     "background-image": "url(../uploads/"+userComment[0].profile_picture+")",
                                    // "background-image": "url(../uploads/"+1+".jpg)"
 
+                                });*/
+
+                                $(".img-post-user"+value.id_post+index).css({
+                                    "background-image": "url(../uploads/"+userComment[0].profile_picture+")",
+                                    // "background-image": "url(../uploads/"+1+".jpg)"
+
                                 });
-                                console.log(+userComment[index].username);
-                                var nameUserPost = $("<h1>" + value.username + ": " + "</h1>");
+
+
+                               // console.log(+userComment[index].username);
+                                var nameUserPost = $("<h1>" + valor.username + ": " + "</h1>");
                                 toggleBox.append(nameUserPost);
-                                var descriptionUserPost = $("<p>" + value.content + "<br><hr><br>" + "</p>");
+                                var descriptionUserPost = $("<p>" + valor.content + "<br><hr><br>" + "</p>");
                                 toggleBox.append(descriptionUserPost);
 
                             });
@@ -149,7 +159,7 @@ $(document).ready(function () {
 function obtenerPosts() {
 
     return $.ajax({
-        url: "http://localhost:3000/posts",
+        url: "/posts",
         type: "get",
         dataType: "json"
     });
@@ -157,7 +167,7 @@ function obtenerPosts() {
 
 function obtenerLikes(idPost) {
     return $.ajax({
-        url: "http://localhost:3000/likes/" + idPost,
+        url: "/likes/" + idPost,
         type: "get",
         dataType: "json",
     });
@@ -165,7 +175,7 @@ function obtenerLikes(idPost) {
 
 function obtenerComments(idPost) {
     return $.ajax({
-        url: "http://localhost:3000/comments/" + idPost,
+        url: "/comments/" + idPost,
         type: "get",
         dataType: "json"
     });
@@ -173,7 +183,7 @@ function obtenerComments(idPost) {
 
 function obtenerUsuario(username) {
     return $.ajax({
-        url: "http://localhost:3000/users/" + username,
+        url: "/users/" + username,
         type: "get",
         dataType: "json"
     });
@@ -181,7 +191,7 @@ function obtenerUsuario(username) {
 
 function agregarLike(username, post) {
     return $.ajax({
-        url: "http://localhost:3000/likes/nuevo/" + username + "/" + post + "",
+        url: "/likes/nuevo/" + username + "/" + post + "",
         type: "post",
         dataType: "json"
     });

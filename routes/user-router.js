@@ -118,8 +118,8 @@ router.get('/:usuario/:pass', function(req, res, next) {
 
 
 router.get('/:usuario', function(req, res, next) {
-    console.log(req.cookies['usuario']);
-    if(req.params.usuario==req.cookies['usuario']){
+   // console.log(req.cookies['usuario']);
+   // if(req.params.usuario==req.cookies['usuario']){
 controller.consultarUsuario(req.params.usuario,function(err,users){
     if(err){
         res.status(500);
@@ -129,10 +129,10 @@ controller.consultarUsuario(req.params.usuario,function(err,users){
 
             res.json(users);}}
         )
-   }else {
+ /*}else {
 
         res.json("No iniciaste sesión");
-    }
+    }*/
     //res.sendFile('C:/Users/Juliana/WebstormProjects/juliana-villegas-taller-dos/public/signup.html');
 });
 
