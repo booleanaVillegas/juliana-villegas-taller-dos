@@ -108,6 +108,7 @@ $(document).ready(function () {
                                    // "background-image": "url(../uploads/"+1+".jpg)"
 
                                 });
+                                console.log(+userComment[index].username);
                                 var nameUserPost = $("<h1>" + value.username + ": " + "</h1>");
                                 toggleBox.append(nameUserPost);
                                 var descriptionUserPost = $("<p>" + value.content + "<br><hr><br>" + "</p>");

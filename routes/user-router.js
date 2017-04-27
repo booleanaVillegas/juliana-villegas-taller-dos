@@ -129,7 +129,7 @@ controller.consultarUsuario(req.params.usuario,function(err,users){
 
             res.json(users);}}
         )
-    }else {
+   }else {
 
         res.json("No iniciaste sesión");
     }
