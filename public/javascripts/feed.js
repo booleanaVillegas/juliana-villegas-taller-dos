@@ -73,6 +73,7 @@ $(document).ready(function () {
                         i.setAttribute('type',"comment");
                         i.setAttribute('name',"comment");
                         i.setAttribute('placeholder',"What do you think?");
+                        i.setAttribute('autocomplete',"off");
 
                         var s = document.createElement("button"); //input element, Submit button
                         s.setAttribute('class',"fa fa-paper-plane col-1");
@@ -97,8 +98,8 @@ $(document).ready(function () {
                         comments.append(spanComments);
                         likes.append(spanLikes);
                         article.append(toggleBox);
-article.append(boxComment);
-boxComment.append(form);
+                        article.append(boxComment);
+                        boxComment.append(form);
                         $.each(ncomments, function (index, value) {
                             obtenerUsuario(value.username).done(function (userComment) {
                                 var userComImg=$("<div>",{"class":"img-post-user"});
