@@ -74,19 +74,19 @@ $(document).ready(function () {
                       //  var form = $("<form>"+"</form>").attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
 
                        var form = document.createElement("form");
-                    form.setAttribute('class','col-12 col-10-s');
+                    form.setAttribute('class','col-12 col-11-s');
                      form.setAttribute('method',"post");
                   form.setAttribute('action',"/comments/nuevo/"+value.id_post);
                    //form.attr({ class:"col-12 col-10-s", method:"post",action:"/comments" });
 
                         var i = document.createElement("input"); //input element, text
-                        i.setAttribute('class',"col-10");
+                        i.setAttribute('class',"col-10 offset-0");
                         i.setAttribute('type',"comment");
                         i.setAttribute('name',"comment");
                         i.setAttribute('placeholder',"What do you think?");
                         i.setAttribute('autocomplete',"off");
                         var s = document.createElement("button"); //input element, Submit button
-                        s.setAttribute('class',"fa fa-paper-plane col-1");
+                        s.setAttribute('class',"fa fa-paper-plane col-1 col-2-s");
                         s.setAttribute('aria-hidden',"true");
 
                         form.appendChild(i);
