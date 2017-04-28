@@ -20,12 +20,23 @@ $(document).ready(function () {
 
     var usuario = getCookie("usuario");
 
+    if(document.cookie.length <= 0 || usuario.length==0) {
+        console.log("no tienes cookies");
+        $(location).attr('href', '/');
+    }
 
     obtenerUsuario(usuario).done(function (respuesta) {
         usuario = respuesta[0].username;
-        console.log(usuario);
 
-        $(".user-img").attr("src", "../uploads/" + respuesta[0].profile_picture);
+
+        $(".user-img").css({
+
+         "background-image": "url(../uploads/"+respuesta[0].profile_picture+")",
+         // "background-image": "url(../uploads/"+1+".jpg)"
+
+         });
+
+        //$(".user-img").attr("src", "../uploads/" + respuesta[0].profile_picture);
         $(".user-name").text(usuario);
     });
 
@@ -104,7 +115,7 @@ $(document).ready(function () {
                                 var userComImg=$("<div>",{"class":"img-post-user img-post-user"+value.id_post+index});
 
                                 toggleBox.append(userComImg);
-                                console.log(userComment[0].username);
+                               // console.log(userComment[0].username);
                                /* $(".img-post-user").css({
                                     "background-image": "url(../uploads/"+userComment[0].profile_picture+")",
                                    // "background-image": "url(../uploads/"+1+".jpg)"

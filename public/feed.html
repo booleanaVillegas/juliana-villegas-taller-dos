@@ -12,14 +12,15 @@
     </head>
 </head>
 
-<body>
+<body class="body-feed">
 
 <section class="feed ">
     <header>
         <nav>
-            <div class="usuario dev-center">
+            <div class="usuario dev-center-vertical">
                
-                <figure class="col-1 col-3-s"><img class="user-img col-6 " src="" alt=""></figure>
+                <!--<figure class="col-1 col-3-s"><img class="user-img col-6 " src="" alt=""></figure>-->
+                <div class="col-1" ><div class="user-img"></div></div>
                 <h1 class="user-name col-1"></h1>
                  
                 <figure class="col-2 offset-3 col-5-s offset-0-s"><img src="img/logo.png" alt="" class="col-7 col-10-s " ></figure>
@@ -36,25 +37,31 @@
         </nav>
     </header>
 
-   
+   <br>
+   <br>
+   <br>
+    <br>
+ 
+   <br>
    <content>
    
   
    
    <h1 class="col-12" style="text-align:center">Share your tattoo</h1>
-          <section class="dev-center">
+          <section class="col-6 offset-3" style="text-align: center; margin-top:20px">
           
-           <form  class="col-6" method="post" action="/posts/new-post/" enctype="multipart/form-data">
+          
+           <form  class="col-12" method="post" action="/posts/new-post/" enctype="multipart/form-data">
 
-               
-                 <input type="file" id="photo" name="photo"
+               <label for="photo-subir"  class="fa fa-cloud-upload fa-3x"></label>
+                 <input type="file" id="photo-subir" name="photo"
                        placeholder="Selecciona un archivo">
               
 
                 <textarea type="summary"  name="summary"  placeholder="Qué piensas de tu tattoo :D "></textarea>
 
                 <!--<input class="btn" type="submit" value="Log in">-->
-<button>share post</button>
+<button class="btn boton-post">share post</button>
 
 
             </form>
@@ -111,7 +118,8 @@
         
         
     </content>
-    <footer class="dev-center">InkMunity inc. All rights reserved. Developed by Juliana Villegas</footer>
+    <footer class="dev-center">
+    InkMunity inc. All rights reserved. Developed by Juliana Villegas</footer>
     </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="javascripts/feed.js" type="text/javascript"></script>

@@ -1,26 +1,31 @@
 /**
  * Created by Juliana on 22/04/2017.
  */
-function validarUsuario(username,contaseña){
-    return $.ajax({
-        url:"/users/"+username+"/"+contaseña+"",
-        type:"get",
-        dataType: "json"
-    });
-}
-
-$(".btn").click(function(){
-    var user = $('#user-login').val();
-    var pass = $('#pass-login').val();
-    validarUsuario(user,pass).done(function(respuesta){
-     $(".text-err").text(respuesta);
-    });
-});
-
 if(document.cookie.length <= 0) {
     console.log("no tienes cookies");
 
 }else{
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    var usuario = getCookie("usuario");
+
+
     console.log("si tienes cookies");
-    $(location).attr('href','/feed');
+
+    if(usuario.length>0) {
+        $(location).attr('href', '/feed');
+    }
 }

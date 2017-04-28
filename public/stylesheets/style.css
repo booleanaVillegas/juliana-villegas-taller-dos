@@ -101,8 +101,22 @@ section {
     display: block
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-    line-height: 1
+    position: relative;
+     margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 
 ol,
@@ -305,6 +319,7 @@ table {
     font-weight: 300;
     font-size: 14pt;
      border-style: none;
+   cursor: pointer;
 }
 
 .home{
@@ -515,18 +530,27 @@ table {
 }
 
 .feed{
- margin-top: 80px;
+
     background-color: black;
     padding-top: 10px;
+
+  
 }
 
 
+.body-feed{
+    background-color: black;
+}
+
 
 .feed>footer{
-    position: relative;
+    position: absolute;
     bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
     height: 8vh;
+
     background-color: var(--brown-solid);
     color: white;
     font-family: roboto, sans-serif;
@@ -544,7 +568,23 @@ table {
 }
 
 .user-img{
-  clip-path: circle(40%  at center);
+    background-image: url("../img/profile.png");
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  clip-path: circle(50%  at center);
+float: right
+}
+label{
+    cursor: pointer;
+}
+#photo-subir{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    width: 0;
 }
 
 .user-post-img{
@@ -674,6 +714,10 @@ cursor: pointer;
 
 }
 
+.fa-3x{
+
+
+}
 input[type=file]{
 
 }
@@ -801,8 +845,11 @@ input[type=file]{
     font-size: 12pt;
 display: inline-block;
        margin: 20px;
-    }    
+
+
+    } 
     
+   
     .user-name{
      font-size: 0;   
     } 

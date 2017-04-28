@@ -3,6 +3,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://use.fontawesome.com/33e6d88812.js"></script>
     <title>Sign Up</title>
 </head>
 
@@ -21,8 +22,9 @@
 
             <form class="col-8 offset-2 col-10-s offset-1-s" method="post" id="upload-form" action="/users/new-user/" enctype="multipart/form-data">
 
-                <input type="file" id="photo" class="fa fa-cloud-upload col-1" name="photo"
-                aria-hidden="true" placeholder="">
+                <label for="photo-subir"  class="fa fa-cloud-upload fa-3x"></label>
+                <input type="file" id="photo-subir" name="photo"
+                       placeholder="Selecciona un archivo">
 
                 <input type="text" name="usuario" placeholder="Username">
 
