@@ -43,7 +43,12 @@ router.post('/new-user/', function(req, res, next) {
      var usuario=req.body.usuario;
      var pass=req.body.pass;
      var nation=req.body.nation;
-     var img= req.file.filename;
+     try{
+         var img= req.file.filename;
+     }catch(err){
+         var img= " ";
+}
+
 
 
    /* console.log(req.file.originalname);
@@ -52,11 +57,16 @@ router.post('/new-user/', function(req, res, next) {
     console.log(req.file.mimetype);
     console.log(req.file.size);
 */
+if(name<2 || lastname<2 || email<2 || usuario<2 || pass<2 || nation<2 || img<2 ){
+    res.cookie('error', "usuario o contraseña incorrecto");
+    res.redirect("/signup");
 
+}
     controller.nuevoUsuario(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
      if(err){
      res.status(500);
      res.end();
+         res.cookie('error', "usuario o contraseña incorrecto");
      }else{
      console.log("registre");
 
@@ -105,8 +115,8 @@ router.get('/:usuario/:pass', function(req, res, next) {
 
                     }else {
                         console.log("usuario o contraseña incorrecto");
-                        //res.send("nope")
-                        res.redirect("/");
+                        res.cookie('error', "usuario o contraseña incorrecto");
+                        res.redirect("/login");
 
                         //res.status(500).send("Usuario o contraseña incorrecto");
                         //res.json("Usuario o contraseña incorrecto");

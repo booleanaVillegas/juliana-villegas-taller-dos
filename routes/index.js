@@ -19,7 +19,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/feed', function(req, res, next) {
-
+    res.clearCookie("error");
         var ruta = __dirname.split("routes");
         res.sendFile(ruta[0] + '/public/feed.html');
 
@@ -29,6 +29,7 @@ router.get('/feed', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
 
   res.clearCookie("usuario");
+    res.clearCookie("error");
     //cookies.set('usuario', {expires: Date.now()});
     res.redirect("/");
 });
