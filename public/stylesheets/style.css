@@ -848,10 +848,12 @@ input[type=file]{
         
     font-size: 12pt;
 display: inline-block;
-     
-
-
+    
     } 
+     
+       .botones-feed{
+           margin: 10px;
+       }
     
     nav{
         padding-left: 20px;
