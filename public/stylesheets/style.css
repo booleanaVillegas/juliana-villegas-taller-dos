@@ -721,6 +721,9 @@ cursor: pointer;
 input[type=file]{
 
 }
+.error{
+    text-align: center;
+}
 
 .post-img{
     margin-top: 10px;

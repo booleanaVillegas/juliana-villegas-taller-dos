@@ -21,11 +21,15 @@ if(document.cookie.length <= 0) {
     }
 
     var usuario = getCookie("usuario");
+    var errorC = getCookie("error");
 
+    console.log(errorC);
 
-    console.log("si tienes cookies");
 
     if(usuario.length>0) {
         $(location).attr('href', '/feed');
+    }
+    if(errorC.length>0) {
+        $(".error").text("Usuario o contraseña incorrecta");
     }
 }

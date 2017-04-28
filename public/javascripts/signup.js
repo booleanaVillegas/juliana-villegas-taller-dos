@@ -1,3 +1,6 @@
+/**
+ * Created by Juliana on 22/04/2017.
+ */
 if(document.cookie.length <= 0) {
     console.log("no tienes cookies");
 
@@ -18,11 +21,15 @@ if(document.cookie.length <= 0) {
     }
 
     var usuario = getCookie("usuario");
+    var errorC = getCookie("error");
 
+    console.log(errorC);
 
-    console.log("si tienes cookies");
 
     if(usuario.length>0) {
         $(location).attr('href', '/feed');
+    }
+    if(errorC.length>0) {
+        $(".error").text("No ingresaste bien tus datos, vuelve a ingresarlos de nuevo");
     }
 }
