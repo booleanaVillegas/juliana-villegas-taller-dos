@@ -314,7 +314,7 @@ table {
     text-decoration: none;
     padding: 4px 40px;
     border-radius: 14px;
-    margin: 0px 50px;
+   
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 14pt;
@@ -555,6 +555,7 @@ table {
     color: white;
     font-family: roboto, sans-serif;
     font-weight: 300;
+    text-align: center;
 }
 
 .usuario{
@@ -847,10 +848,15 @@ input[type=file]{
         
     font-size: 12pt;
 display: inline-block;
-       margin: 20px;
+     
 
 
     } 
+    
+    nav{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     
    
     .user-name{
@@ -858,6 +864,7 @@ display: inline-block;
     } 
     .post{
          padding: 15px 15px 0px 15px;
+        
     }
     footer>p{
         text-align: center;
