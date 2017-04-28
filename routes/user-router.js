@@ -61,21 +61,22 @@ if(name<2 || lastname<2 || email<2 || usuario<2 || pass<2 || nation<2 || img<2 )
     res.cookie('error', "usuario o contraseña incorrecto");
     res.redirect("/signup");
 
+}else {
+    controller.nuevoUsuario(name, lastname, email, usuario, pass, nation, img, function (err, registraste) {
+        if (err) {
+            res.status(500);
+            res.end();
+            res.cookie('error', "usuario o contraseña incorrecto");
+        } else {
+            console.log("registre");
+
+
+            res.redirect("/login");
+            //res.json(registraste);
+
+        }
+    });
 }
-    controller.nuevoUsuario(name,lastname,email,usuario,pass,nation,img,function(err,registraste){
-     if(err){
-     res.status(500);
-     res.end();
-         res.cookie('error', "usuario o contraseña incorrecto");
-     }else{
-     console.log("registre");
-
-
-     res.redirect("/login");
-     //res.json(registraste);
-
-     }
-     });
 });
 
 /*
